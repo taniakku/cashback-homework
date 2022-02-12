@@ -10,8 +10,9 @@ public class CashbackHackServiceTest {
     public void testRemainUnderBoundary() {
         CashbackHackService cashbackHackService = new CashbackHackService();
 
-        int expected = 995;
-        int actual = cashbackHackService.remain(500);
+        int amount = 350;
+        int expected = 650;
+        int actual = cashbackHackService.remain(amount);
 
         assertEquals(actual, expected);
 
@@ -22,8 +23,9 @@ public class CashbackHackServiceTest {
     public void testRemainOverBoundary() {
         CashbackHackService cashbackHackService = new CashbackHackService();
 
-        int expected = 997;
-        int actual = cashbackHackService.remain(1300);
+        int amount = 1300;
+        int expected = 700;
+        int actual = cashbackHackService.remain(amount);
 
         assertEquals(actual, expected);
 
@@ -34,8 +36,9 @@ public class CashbackHackServiceTest {
     public void testRemainOnBoundary() {
         CashbackHackService cashbackHackService = new CashbackHackService();
 
-        int expected = 1000;
-        int actual = cashbackHackService.remain(1000);
+        int amount = 1000;
+        int expected = 0;
+        int actual = cashbackHackService.remain(amount);
 
         assertEquals(actual, expected);
 
